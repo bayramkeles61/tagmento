@@ -2,9 +2,12 @@
   "name": "workspace-root",
   "version": "0.0.0",
   "private": true,
+  "workspaces": [
+    "packages/*"
+  ],
   "packageManager": "npm@10.2.3",
   "scripts": {
-    "build": "turbo build",
+    "build": "npx turbo run build",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
