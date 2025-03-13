@@ -1,28 +1,17 @@
-"use client";
+'use client';
 
-import ComponentCli from "@/components/cli-commands";
-import CodeBlock, { highlight } from "@/components/code-block";
-import CopyButton from "@/components/copy-button";
-import OpenInV0 from "@/components/open-in-v0";
-import { convertRegistryPaths } from "@/lib/utils";
-import { Button } from "@/registry/default/ui/button";
-import {
-  Dialog,
-  DialogContent,
-  DialogHeader,
-  DialogTitle,
-  DialogTrigger,
-} from "@/registry/default/ui/dialog";
-import {
-  Tooltip,
-  TooltipContent,
-  TooltipProvider,
-  TooltipTrigger,
-} from "@/registry/default/ui/tooltip";
-import { DialogDescription } from "@radix-ui/react-dialog";
-import { CodeIcon } from "lucide-react";
-import { JSX, useEffect, useState } from "react";
-import type { RegistryItem } from "shadcn/registry";
+import ComponentCli from '@/components/cli-commands';
+import CodeBlock, { highlight } from '@/components/code-block';
+import CopyButton from '@/components/copy-button';
+import OpenInV0 from '@/components/open-in-v0';
+import { convertRegistryPaths } from '@/lib/utils';
+import { Button } from '@/registry/default/ui/button';
+import { Dialog, DialogContent, DialogHeader, DialogTitle, DialogTrigger } from '@/registry/default/ui/dialog';
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '@/registry/default/ui/tooltip';
+import { DialogDescription } from '@radix-ui/react-dialog';
+import { CodeIcon } from 'lucide-react';
+import { JSX, useEffect, useState } from 'react';
+import type { RegistryItem } from 'shadcn/registry';
 
 export default function ComponentDetails({ component }: { component: RegistryItem }) {
   const [code, setCode] = useState<string | null>(null);
@@ -30,7 +19,7 @@ export default function ComponentDetails({ component }: { component: RegistryIte
 
   useEffect(() => {
     const handleEmptyCode = () => {
-      setCode("");
+      setCode('');
       setHighlightedCode(null);
     };
 
@@ -42,21 +31,21 @@ export default function ComponentDetails({ component }: { component: RegistryIte
           return;
         }
 
-        const contentType = response.headers.get("content-type");
-        if (!contentType || !contentType.includes("application/json")) {
+        const contentType = response.headers.get('content-type');
+        if (!contentType || !contentType.includes('application/json')) {
           handleEmptyCode();
           return;
         }
 
         const data = await response.json();
-        const codeContent = convertRegistryPaths(data.files[0].content) || "";
+        const codeContent = convertRegistryPaths(data.files[0].content) || '';
         setCode(codeContent);
 
         // Pre-highlight the code
-        const highlighted = await highlight(codeContent, "ts");
+        const highlighted = await highlight(codeContent, 'ts');
         setHighlightedCode(highlighted);
       } catch (error) {
-        console.error("Failed to load code:", error);
+        console.error('Failed to load code:', error);
         handleEmptyCode();
       }
     };
@@ -83,24 +72,20 @@ export default function ComponentDetails({ component }: { component: RegistryIte
                 </DialogTrigger>
               </span>
             </TooltipTrigger>
-            <TooltipContent className="text-muted-foreground px-2 py-1 text-xs">
-              View code
-            </TooltipContent>
+            <TooltipContent className="text-muted-foreground px-2 py-1 text-xs">View code</TooltipContent>
           </Tooltip>
         </TooltipProvider>
         <DialogContent className="sm:max-w-[600px]">
           <DialogHeader>
             <DialogTitle className="text-left">Installation</DialogTitle>
-            <DialogDescription className="sr-only">
-              Use the CLI to add components to your project
-            </DialogDescription>
+            <DialogDescription className="sr-only">Use the CLI to add components to your project</DialogDescription>
           </DialogHeader>
           <div className="min-w-0 space-y-5">
             <ComponentCli name={component.name} />
             <div className="space-y-4">
               <p className="text-lg font-semibold tracking-tight">Code</p>
               <div className="relative">
-                {code === "" ? (
+                {code === '' ? (
                   <p className="text-muted-foreground text-sm">No code available.</p>
                 ) : (
                   <>

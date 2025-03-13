@@ -386,15 +386,16 @@ const TagInput = React.forwardRef<HTMLInputElement, TagInputProps>((props, ref) 
 
   const truncatedTags = truncate
     ? tags.map((tag) => ({
-      id: tag.id,
-      text: tag.text?.length > truncate ? `${tag.text.substring(0, truncate)}...` : tag.text,
-    }))
+        id: tag.id,
+        text: tag.text?.length > truncate ? `${tag.text.substring(0, truncate)}...` : tag.text,
+      }))
     : displayedTags;
 
   return (
     <div
-      className={`w-full flex ${!inlineTags && tags.length > 0 ? 'gap-3' : ''} ${inputFieldPosition === 'bottom' ? 'flex-col' : inputFieldPosition === 'top' ? 'flex-col-reverse' : 'flex-row'
-        }`}
+      className={`w-full flex ${!inlineTags && tags.length > 0 ? 'gap-3' : ''} ${
+        inputFieldPosition === 'bottom' ? 'flex-col' : inputFieldPosition === 'top' ? 'flex-col-reverse' : 'flex-row'
+      }`}
     >
       {!usePopoverForTags &&
         (!inlineTags ? (
@@ -641,9 +642,7 @@ const TagInput = React.forwardRef<HTMLInputElement, TagInputProps>((props, ref) 
                 onFocus={handleInputFocus}
                 onBlur={handleInputBlur}
                 {...inputProps}
-                className={cn(
-                  styleClasses?.input, "shadow-none"
-                )}
+                className={cn(styleClasses?.input, 'shadow-none')}
                 autoComplete={enableAutocomplete ? 'on' : 'off'}
                 list={enableAutocomplete ? 'autocomplete-options' : undefined}
                 disabled={disabled || (maxTags !== undefined && tags.length >= maxTags)}
@@ -689,10 +688,7 @@ const TagInput = React.forwardRef<HTMLInputElement, TagInputProps>((props, ref) 
                 autoComplete={enableAutocomplete ? 'on' : 'off'}
                 list={enableAutocomplete ? 'autocomplete-options' : undefined}
                 disabled={disabled || (maxTags !== undefined && tags.length >= maxTags)}
-                className={cn(
-                  'border-0 w-full shadow-none',
-                  styleClasses?.input,
-                )}
+                className={cn('border-0 w-full shadow-none', styleClasses?.input)}
               />
             </TagPopover>
           )}

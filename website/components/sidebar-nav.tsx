@@ -14,18 +14,22 @@ export interface DocsSidebarNavProps {
 export function DocsSidebarNav({ items }: DocsSidebarNavProps) {
   const pathname = usePathname();
 
-  return <div className="w-96 hidden md:block fixed left-0 top-14 py-14 px-6">
-    <ScrollArea style={{
-      height: 'calc(100vh - 112px - 152px)'
-    }}>
-      {items.map((item, index) => (
-        <div key={index} className='pb-4'>
-          <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-foreground uppercase">{item.title}</h4>
-          {item?.items?.length && <DocsSidebarNavItems items={item.items} pathname={pathname} />}
-        </div>
-      ))}
-    </ScrollArea>
-  </div >
+  return (
+    <div className="w-96 hidden md:block fixed left-0 top-14 py-14 px-6">
+      <ScrollArea
+        style={{
+          height: 'calc(100vh - 112px - 152px)',
+        }}
+      >
+        {items.map((item, index) => (
+          <div key={index} className="pb-4">
+            <h4 className="mb-1 rounded-md px-2 py-1 text-sm font-semibold text-foreground uppercase">{item.title}</h4>
+            {item?.items?.length && <DocsSidebarNavItems items={item.items} pathname={pathname} />}
+          </div>
+        ))}
+      </ScrollArea>
+    </div>
+  );
 }
 
 interface DocsSidebarNavItemsProps {
@@ -35,7 +39,7 @@ interface DocsSidebarNavItemsProps {
 
 export function DocsSidebarNavItems({ items, pathname }: DocsSidebarNavItemsProps) {
   return items?.length ? (
-    <div className='ml-4'>
+    <div className="ml-4">
       {items.map((item, index) =>
         item.href && !item.disabled ? (
           <Link

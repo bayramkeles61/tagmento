@@ -1,5 +1,5 @@
-import { cn } from "@/registry/default/lib/utils";
-import type { RegistryItem } from "shadcn/registry";
+import { cn } from '@/registry/default/lib/utils';
+import type { RegistryItem } from 'shadcn/registry';
 
 export default function ComponentCard({
   isSearchPage = false,
@@ -13,41 +13,33 @@ export default function ComponentCard({
   const getColSpanClasses = (includeStart = false) => {
     const baseClasses =
       component.meta?.colSpan === 2
-        ? "col-span-12 sm:col-span-6 lg:col-span-6"
+        ? 'col-span-12 sm:col-span-6 lg:col-span-6'
         : component.meta?.colSpan === 3
-          ? "col-span-12 sm:col-span-12 lg:col-span-12"
-          : "col-span-12 sm:col-span-6 lg:col-span-4";
+          ? 'col-span-12 sm:col-span-12 lg:col-span-12'
+          : 'col-span-12 sm:col-span-6 lg:col-span-4';
 
     const startClasses =
       includeStart && component.meta?.colSpan !== 3
         ? component.meta?.colSpan === 2
-          ? "sm:col-start-4 lg:col-start-4"
-          : "sm:col-start-4 lg:col-start-5"
-        : "";
+          ? 'sm:col-start-4 lg:col-start-4'
+          : 'sm:col-start-4 lg:col-start-5'
+        : '';
 
     return cn(baseClasses, startClasses);
   };
 
   const styleClasses =
-    component.meta?.style === 1
-      ? "flex justify-center items-center"
-      : component.meta?.style === 2
-        ? "text-center"
-        : "";
+    component.meta?.style === 1 ? 'flex justify-center items-center' : component.meta?.style === 2 ? 'text-center' : '';
 
   return (
     <div className="overflow-hidden px-2">
       <div
         className={cn(
-          "group/item relative rounded border-border/30 has-[[data-comp-loading=true]]:border-none py-8",
-          isSearchPage ? "col-span-12 grid grid-cols-12" : cn(getColSpanClasses(), styleClasses),
+          'group/item relative rounded border-border/30 has-[[data-comp-loading=true]]:border-none py-8',
+          isSearchPage ? 'col-span-12 grid grid-cols-12' : cn(getColSpanClasses(), styleClasses),
         )}
       >
-        {isSearchPage ? (
-          <div className={cn(getColSpanClasses(true), styleClasses)}>{children}</div>
-        ) : (
-          children
-        )}
+        {isSearchPage ? <div className={cn(getColSpanClasses(true), styleClasses)}>{children}</div> : children}
       </div>
     </div>
   );

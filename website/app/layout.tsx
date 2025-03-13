@@ -1,7 +1,7 @@
 import './globals.css';
 
 import type { Metadata, Viewport } from 'next';
-import { Toaster } from "@/registry/default/ui/sonner"
+import { Toaster } from '@/registry/default/ui/sonner';
 import { Inter } from 'next/font/google';
 import { siteConfig } from '../config/site-config';
 import { ThemeProvider } from '@/components/theme-provider';
@@ -59,14 +59,9 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html className='smooth-scroll' lang="en" suppressHydrationWarning>
+    <html className="smooth-scroll" lang="en" suppressHydrationWarning>
       <body className={inter.className}>
-        <ThemeProvider
-          attribute="class"
-          defaultTheme="system"
-          enableSystem
-          disableTransitionOnChange
-        >
+        <ThemeProvider attribute="class" defaultTheme="system" enableSystem disableTransitionOnChange>
           <SiteHeader />
           {children}
           <SiteFooter />

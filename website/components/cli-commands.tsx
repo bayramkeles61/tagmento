@@ -1,12 +1,12 @@
-"use client";
+'use client';
 
-import CopyButton from "@/components/copy-button";
-import { useConfig } from "@/hooks/use-config";
-import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/registry/default/ui/tabs";
+import CopyButton from '@/components/copy-button';
+import { useConfig } from '@/hooks/use-config';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/registry/default/ui/tabs';
 
 export default function CliCommands({ name }: { name: string }) {
   const [config, setConfig] = useConfig();
-  const packageManager = config.packageManager || "npm";
+  const packageManager = config.packageManager || 'npm';
 
   const commands = {
     npm: `npx shadcn@latest add https://tagmento.com/r/${name}.json`,
@@ -22,7 +22,7 @@ export default function CliCommands({ name }: { name: string }) {
         onValueChange={(value) => {
           setConfig({
             ...config,
-            packageManager: value as "npm" | "pnpm" | "yarn" | "bun",
+            packageManager: value as 'npm' | 'pnpm' | 'yarn' | 'bun',
           });
         }}
         className="rounded-md bg-zinc-950 dark:bg-zinc-900"
@@ -59,10 +59,7 @@ export default function CliCommands({ name }: { name: string }) {
           </TabsContent>
         ))}
       </Tabs>
-      <CopyButton
-        componentSource={commands[packageManager as keyof typeof commands]}
-        className="top-1"
-      />
+      <CopyButton componentSource={commands[packageManager as keyof typeof commands]} className="top-1" />
     </div>
   );
 }

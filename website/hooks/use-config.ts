@@ -1,12 +1,12 @@
-import { useAtom } from "jotai";
-import { atomWithStorage } from "jotai/utils";
+import { useAtom } from 'jotai';
+import { atomWithStorage } from 'jotai/utils';
 
 type Config = {
-  packageManager: "npm" | "yarn" | "pnpm" | "bun";
+  packageManager: 'npm' | 'yarn' | 'pnpm' | 'bun';
 };
 
-const configAtom = atomWithStorage<Config>("config", {
-  packageManager: "npm",
+const configAtom = atomWithStorage<Config>('config', {
+  packageManager: 'npm',
 });
 
 export function useConfig() {

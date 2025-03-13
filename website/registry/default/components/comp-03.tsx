@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { Label } from "@/registry/default/ui/label";
-import { Tag, TagInput } from "tagmento";
-import { useId, useState } from "react";
+import { Label } from '@/registry/default/ui/label';
+import { Tag, TagInput } from 'tagmento';
+import { useId, useState } from 'react';
 
 const tags = [
   {
-    id: "1",
-    text: "Tag 1",
+    id: '1',
+    text: 'Tag 1',
   },
 ];
 

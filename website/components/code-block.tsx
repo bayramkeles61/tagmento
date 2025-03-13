@@ -1,15 +1,15 @@
-"use client";
+'use client';
 
-import { toJsxRuntime } from "hast-util-to-jsx-runtime";
-import { JSX, useLayoutEffect, useState } from "react";
-import { Fragment, jsx, jsxs } from "react/jsx-runtime";
-import type { BundledLanguage } from "shiki/bundle/web";
-import { codeToHast } from "shiki/bundle/web";
+import { toJsxRuntime } from 'hast-util-to-jsx-runtime';
+import { JSX, useLayoutEffect, useState } from 'react';
+import { Fragment, jsx, jsxs } from 'react/jsx-runtime';
+import type { BundledLanguage } from 'shiki/bundle/web';
+import { codeToHast } from 'shiki/bundle/web';
 
 export async function highlight(code: string, lang: BundledLanguage) {
   const hast = await codeToHast(code, {
     lang,
-    theme: "github-dark",
+    theme: 'github-dark',
   });
 
   return toJsxRuntime(hast, {

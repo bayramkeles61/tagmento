@@ -4,7 +4,7 @@
 
 ## Shadcn UI Registry Support Added
 
- This makes component customization much more accessible and flexible.
+This makes component customization much more accessible and flexible.
 
 ## Fork of Emblor Library Updated for Tailwind CSS 4.0 and React 19
 
@@ -50,7 +50,7 @@ Here's a sample implementation that initializes the component with a list of ini
 The example below uses `tailwindcss` `@shadcn/ui` `tailwind-merge` `clsx`:
 
 ```tsx
-"use client";
+'use client';
 
 import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
 import { Tag, TagInput } from 'tagmento';

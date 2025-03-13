@@ -1,22 +1,22 @@
-"use client";
+'use client';
 
-import { Label } from "@/registry/default/ui/label";
-import { Tag, TagInput } from "tagmento";
-import { useId, useState } from "react";
+import { Label } from '@/registry/default/ui/label';
+import { Tag, TagInput } from 'tagmento';
+import { useId, useState } from 'react';
 
 const tags = [
   {
-    "id": "4008078267",
-    "text": "Sports"
+    id: '4008078267',
+    text: 'Sports',
   },
   {
-    "id": "3845028077",
-    "text": "Programming"
+    id: '3845028077',
+    text: 'Programming',
   },
   {
-    "id": "405323840",
-    "text": "Travel"
-  }
+    id: '405323840',
+    text: 'Travel',
+  },
 ];
 
 export default function Component() {
@@ -36,9 +36,7 @@ export default function Component() {
         placeholder="Add a tag"
         activeTagIndex={activeTagIndex}
         setActiveTagIndex={setActiveTagIndex}
-        shape={
-          "default"
-        }
+        shape={'default'}
       />
     </div>
   );

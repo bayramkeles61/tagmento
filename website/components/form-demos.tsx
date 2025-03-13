@@ -1,6 +1,14 @@
-"use client"
+'use client';
 
-import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '@/registry/default/ui/form';
+import {
+  Form,
+  FormControl,
+  FormDescription,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/registry/default/ui/form';
 import { Button } from '@/registry/default/ui/button';
 import { z } from 'zod';
 import { useForm, useController } from 'react-hook-form';
@@ -101,7 +109,7 @@ export function ReactHookFormDemo() {
   // Using useController instead of Controller component
   const { field } = useController({
     name: 'tags',
-    control
+    control,
   });
 
   function onSubmit(data: any) {

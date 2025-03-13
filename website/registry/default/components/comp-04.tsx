@@ -1,13 +1,13 @@
-"use client";
+'use client';
 
-import { Label } from "@/registry/default/ui/label";
-import { Tag, TagInput } from "tagmento";
-import { useId, useState } from "react";
+import { Label } from '@/registry/default/ui/label';
+import { Tag, TagInput } from 'tagmento';
+import { useId, useState } from 'react';
 
 const tags = [
   {
-    id: "1",
-    text: "Tag 1",
+    id: '1',
+    text: 'Tag 1',
   },
 ];
 
@@ -18,7 +18,9 @@ export default function Component() {
 
   return (
     <div className="*:not-first:mt-2">
-      <Label htmlFor={id} className="text-primary">Primary</Label>
+      <Label htmlFor={id} className="text-primary">
+        Primary
+      </Label>
       <TagInput
         id={id}
         tags={exampleTags}
@@ -29,7 +31,6 @@ export default function Component() {
         placeholder="Add a tag"
         activeTagIndex={activeTagIndex}
         setActiveTagIndex={setActiveTagIndex}
-
       />
     </div>
   );

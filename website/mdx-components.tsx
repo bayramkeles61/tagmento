@@ -1,12 +1,20 @@
-import type { MDXComponents } from 'mdx/types'
-import { cn } from './lib/utils'
-import { Table, TableBody, TableCaption, TableCell, TableHead, TableHeader, TableRow } from '@/registry/default/ui/table'
-import Link from 'next/link'
-import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/registry/default/ui/tabs'
+import type { MDXComponents } from 'mdx/types';
+import { cn } from './lib/utils';
+import {
+  Table,
+  TableBody,
+  TableCaption,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from '@/registry/default/ui/table';
+import Link from 'next/link';
+import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/registry/default/ui/tabs';
 import Image from 'next/image';
-import { ComponentPreview } from "@/components/component-preview"
+import { ComponentPreview } from '@/components/component-preview';
 import { MdxPageHeader } from '@/components/MdxPageHeader';
-import { CustomPre } from './components/CustomPre'
+import { CustomPre } from './components/CustomPre';
 
 export function useMDXComponents(components: MDXComponents): MDXComponents {
   return {
@@ -136,7 +144,5 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     MdxPageHeader,
     ComponentPreview,
     ...components,
-  }
+  };
 }
-
-

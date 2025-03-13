@@ -1,14 +1,6 @@
-"use client"
+'use client';
 
-import {
-  Form,
-  FormControl,
-  FormDescription,
-  FormField,
-  FormItem,
-  FormLabel,
-  FormMessage
-} from '../ui/form';
+import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, FormMessage } from '../ui/form';
 import { Button } from '../ui/button';
 
 import { z } from 'zod';
@@ -17,7 +9,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import React, { useId } from 'react';
 import { toast } from 'sonner';
 import { Tag, TagInput } from 'tagmento';
-import { Label } from "@/registry/default/ui/label";
+import { Label } from '@/registry/default/ui/label';
 
 const FormSchema = z.object({
   topics: z.array(
@@ -81,7 +73,9 @@ export default function Component() {
                 </FormItem>
               )}
             />
-            <Button type="submit" className='w-full'>Submit</Button>
+            <Button type="submit" className="w-full">
+              Submit
+            </Button>
           </form>
         </Form>
       </div>

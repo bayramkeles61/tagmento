@@ -1,22 +1,24 @@
-"use client";
+'use client';
 
-import { Tag, TagInput } from "tagmento";
+import { Tag, TagInput } from 'tagmento';
 import { z } from 'zod';
 import { useForm, useController } from 'react-hook-form';
 import { zodResolver } from '@hookform/resolvers/zod';
 import React, { useId } from 'react';
 import { toast } from 'sonner';
-import { uuid } from "@/lib/utils";
-import { Button } from "../ui/button";
-import { Label } from "@/registry/default/ui/label";
+import { uuid } from '@/lib/utils';
+import { Button } from '../ui/button';
+import { Label } from '@/registry/default/ui/label';
 
 const FormSchema = z.object({
-  topics: z.array(
-    z.object({
-      id: z.string(),
-      text: z.string(),
-    }),
-  ).min(1, "Please select at least one topic"),
+  topics: z
+    .array(
+      z.object({
+        id: z.string(),
+        text: z.string(),
+      }),
+    )
+    .min(1, 'Please select at least one topic'),
 });
 
 type FormValues = z.infer<typeof FormSchema>;
@@ -32,7 +34,7 @@ export default function Component() {
     control,
     handleSubmit,
     setValue,
-    formState: { errors, isSubmitting }
+    formState: { errors, isSubmitting },
   } = useForm<FormValues>({
     resolver: zodResolver(FormSchema),
     defaultValues: {
@@ -41,7 +43,7 @@ export default function Component() {
   });
 
   const { field } = useController({
-    name: "topics",
+    name: 'topics',
     control,
   });
 
@@ -68,14 +70,15 @@ export default function Component() {
   };
 
   const handleTagsChange = (newTags: React.SetStateAction<Tag[]>) => {
-    const updatedTags = typeof newTags === 'function'
-      ? newTags(tags)
-      : newTags.map(tag => {
-        if (!tag.id) {
-          return { ...tag, id: uuid() };
-        }
-        return tag;
-      });
+    const updatedTags =
+      typeof newTags === 'function'
+        ? newTags(tags)
+        : newTags.map((tag) => {
+            if (!tag.id) {
+              return { ...tag, id: uuid() };
+            }
+            return tag;
+          });
 
     setTags(updatedTags);
     setValue('topics', updatedTags);
@@ -98,25 +101,14 @@ export default function Component() {
               setActiveTagIndex={setActiveTagIndex}
             />
 
-            {errors.topics && (
-              <p className="text-destructive text-sm mt-1">
-                {errors.topics.message}
-              </p>
-            )}
+            {errors.topics && <p className="text-destructive text-sm mt-1">{errors.topics.message}</p>}
           </div>
 
           <div className="flex justify-end gap-2 mt-4">
-            <Button
-              type="submit"
-              disabled={isSubmitting}
-            >
+            <Button type="submit" disabled={isSubmitting}>
               {isSubmitting ? 'Submitting...' : 'Submit'}
             </Button>
-            <Button
-              type="button"
-              variant={'destructive'}
-              onClick={clearAllTags}
-            >
+            <Button type="button" variant={'destructive'} onClick={clearAllTags}>
               Clear
             </Button>
           </div>

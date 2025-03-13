@@ -12,18 +12,15 @@ export function ModeToggle() {
 
   const smartToggle = () => {
     /* The smart toggle by @nrjdalal */
-    const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
-    if (theme === "system") {
-      setTheme(prefersDarkScheme ? "light" : "dark");
+    const prefersDarkScheme = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    if (theme === 'system') {
+      setTheme(prefersDarkScheme ? 'light' : 'dark');
       setSystem(false);
-    } else if (
-      (theme === "light" && !prefersDarkScheme) ||
-      (theme === "dark" && prefersDarkScheme)
-    ) {
-      setTheme(theme === "light" ? "dark" : "light");
+    } else if ((theme === 'light' && !prefersDarkScheme) || (theme === 'dark' && prefersDarkScheme)) {
+      setTheme(theme === 'light' ? 'dark' : 'light');
       setSystem(false);
     } else {
-      setTheme("system");
+      setTheme('system');
       setSystem(true);
     }
   };
