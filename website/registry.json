@@ -1,0 +1,711 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "acme",
+  "homepage": "https://tagmento.com",
+  "items": [
+    {
+      "name": "comp-01",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-01.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-02",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-02.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-03",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-03.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-04",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-04.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-05",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-05.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-06",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-06.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-07",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-07.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-08",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-08.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-09",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-09.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-10",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-10.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-11",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-11.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-12",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-12.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-13",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-13.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-14",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-14.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-15",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-15.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-16",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-16.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-17",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-17.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-18",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-18.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-19",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-19.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-20",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-20.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-21",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-21.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-22",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-22.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-23",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-23.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-24",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-24.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-25",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-25.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-26",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-26.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-27",
+      "type": "registry:component",
+      "registryDependencies": [
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-27.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-28",
+      "type": "registry:component",
+      "registryDependencies": [
+        "button",
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento",
+        "sonner",
+        "react-hook-form"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-28.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "tag",
+          "tagmento"
+        ]
+      }
+    },
+    {
+      "name": "comp-29",
+      "type": "registry:component",
+      "registryDependencies": [
+        "button",
+        "form",
+        "https://tagmento.com/r/label.json"
+      ],
+      "dependencies": [
+        "tagmento",
+        "sonner",
+        "react-hook-form"
+      ],
+      "files": [
+        {
+          "path": "registry/default/components/comp-29.tsx",
+          "type": "registry:component"
+        }
+      ],
+      "meta": {
+        "tags": [
+          "input",
+          "label",
+          "form",
+          "tag",
+          "tagmento"
+        ]
+      }
+    }
+  ]
+}

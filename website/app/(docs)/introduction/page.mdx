@@ -1,0 +1,66 @@
+---
+title: Introduction
+description: A highly customizable, accessible, and fully-featured tag input component built with shadcn/ui.
+---
+
+<MdxPageHeader 
+  title={frontmatter.title} 
+  description={frontmatter.description} 
+/>
+
+<ComponentPreview componentName={"comp-01"}/>
+
+<br />
+
+<Steps>
+
+### Run the CLI
+
+Run the shadcn-ui init command and setup your project with Shadcn:
+
+<br />
+
+```bash
+npx shadcn-ui@latest init
+```
+
+### Installation
+
+To install Tagmento, run the command:
+
+<br />
+
+```bash
+npm install tagmento
+```
+
+### Usage
+
+To use Tagmento in your project, import the components you need and start using them in your application.
+
+<br />
+
+```tsx
+import { TagInput } from 'tagmento';
+
+const [tags, setTags] = React.useState<Tag[]>([]);
+const [activeTagIndex, setActiveTagIndex] = React.useState<number | null>(null);
+
+<TagInput
+  {...field}
+  placeholder="Enter a topic"
+  tags={tags}
+  setTags={(newTags) => {
+    setTags(newTags);
+    setValue('topics', newTags as [Tag, ...Tag[]]);
+  }}
+  activeTagIndex={activeTagIndex}
+  setActiveTagIndex={setActiveTagIndex}
+/>;
+```
+
+### Thats it!
+
+You have successfully integrated Tagmento into your project. 🎉
+
+</Steps>

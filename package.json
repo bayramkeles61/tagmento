@@ -1,0 +1,50 @@
+{
+  "name": "workspace-root",
+  "version": "0.0.0",
+  "private": true,
+  "packageManager": "npm@10.2.3",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "lint": "turbo lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prettier-check": "prettier --check \"**/*.{ts,tsx,md}\"",
+    "release": "npm run build && changeset publish",
+    "local-release": "changeset version && changeset publish",
+    "prepublishOnly": "npm run ci",
+    "copy-readme": "cp README.md packages/*",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^2.28.1",
+    "@types/node": "^22.13.10",
+    "husky": "^9.1.7",
+    "lint-staged": "^15.4.3",
+    "prettier": "^3.5.3",
+    "tsc-files": "^1.1.4",
+    "tsup": "^8.4.0",
+    "turbo": "latest",
+    "typescript": "^5.8.2",
+    "zod": "^3.24.2",
+    "eslint": "^9.22.0",
+    "npm-run-all": "^4.1.5"
+  },
+  "lint-staged": {
+    "*.{ts,tsx,md,mdx}": [
+      "prettier --write",
+      "tsc-files --noEmit"
+    ],
+    "*.{js,jsx,json}": [
+      "prettier --write"
+    ]
+  },
+  "trustedDependencies": [
+    "npm-run-all"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "rimraf": "^6.0.1"
+  }
+}

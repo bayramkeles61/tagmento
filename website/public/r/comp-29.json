@@ -1,0 +1,31 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-29",
+  "type": "registry:component",
+  "dependencies": [
+    "tagmento",
+    "sonner",
+    "react-hook-form"
+  ],
+  "registryDependencies": [
+    "button",
+    "form",
+    "https://tagmento.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-29.tsx",
+      "content": "\"use client\"\n\nimport {\n  Form,\n  FormControl,\n  FormDescription,\n  FormField,\n  FormItem,\n  FormLabel,\n  FormMessage\n} from '../ui/form';\nimport { Button } from '../ui/button';\n\nimport { z } from 'zod';\nimport { useForm } from 'react-hook-form';\nimport { zodResolver } from '@hookform/resolvers/zod';\nimport React, { useId } from 'react';\nimport { toast } from 'sonner';\nimport { Tag, TagInput } from 'tagmento';\nimport { Label } from \"@/registry/default/ui/label\";\n\nconst FormSchema = z.object({\n  topics: z.array(\n    z.object({\n      id: z.string(),\n      text: z.string(),\n    }),\n  ),\n});\n\nexport default function Component() {\n  const id = useId();\n  const form = useForm<z.infer<typeof FormSchema>>({\n    resolver: zodResolver(FormSchema),\n  });\n\n  const [tags, setTags] = React.useState<Tag[]>([]);\n  const [activeTagIndex, setActiveTagIndex] = React.useState<number | null>(null);\n\n  const { setValue } = form;\n\n  function onSubmit(data: z.infer<typeof FormSchema>) {\n    toast('You submitted the following values:', {\n      description: (\n        <pre className=\"mt-2 w-[340px] rounded-md bg-slate-950 p-4\">\n          <code className=\"text-white\">{JSON.stringify(data, null, 2)}</code>\n        </pre>\n      ),\n    });\n  }\n\n  return (\n    <section className=\"z-10 w-full flex flex-col items-center text-center gap-5\">\n      <div className=\"w-full min-w-[350px]\">\n        <Form {...form}>\n          <form onSubmit={form.handleSubmit(onSubmit)} className=\"space-y-6 flex flex-col items-start\">\n            <FormField\n              control={form.control}\n              name=\"topics\"\n              render={({ field }) => (\n                <FormItem className=\"flex flex-col items-start w-full\">\n                  <FormLabel className=\"text-left\">Topics</FormLabel>\n                  <FormControl className=\"w-full\">\n                    <TagInput\n                      {...field}\n                      placeholder=\"Enter a topic\"\n                      tags={tags}\n                      className=\"\"\n                      setTags={(newTags) => {\n                        setTags(newTags);\n                        setValue('topics', newTags as [Tag, ...Tag[]]);\n                      }}\n                      activeTagIndex={activeTagIndex}\n                      setActiveTagIndex={setActiveTagIndex}\n                    />\n                  </FormControl>\n                  <FormDescription className=\"text-left\">\n                    These are the topics that you&apos;re interested in.\n                  </FormDescription>\n                  <FormMessage />\n                </FormItem>\n              )}\n            />\n            <Button type=\"submit\" className='w-full'>Submit</Button>\n          </form>\n        </Form>\n      </div>\n    </section>\n  );\n}",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "form",
+      "tag",
+      "tagmento"
+    ]
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "comp-28",
+  "type": "registry:component",
+  "dependencies": [
+    "tagmento",
+    "sonner",
+    "react-hook-form"
+  ],
+  "registryDependencies": [
+    "button",
+    "https://tagmento.com/r/label.json"
+  ],
+  "files": [
+    {
+      "path": "registry/default/components/comp-28.tsx",
+      "content": "\"use client\";\n\nimport { Tag, TagInput } from \"tagmento\";\nimport { z } from 'zod';\nimport { useForm, useController } from 'react-hook-form';\nimport { zodResolver } from '@hookform/resolvers/zod';\nimport React, { useId } from 'react';\nimport { toast } from 'sonner';\nimport { uuid } from \"@/lib/utils\";\nimport { Button } from \"../ui/button\";\nimport { Label } from \"@/registry/default/ui/label\";\n\nconst FormSchema = z.object({\n  topics: z.array(\n    z.object({\n      id: z.string(),\n      text: z.string(),\n    }),\n  ).min(1, \"Please select at least one topic\"),\n});\n\ntype FormValues = z.infer<typeof FormSchema>;\n\nconst defaultTags: Tag[] = [];\n\nexport default function Component() {\n  const id = useId();\n  const [tags, setTags] = React.useState<Tag[]>(defaultTags);\n  const [activeTagIndex, setActiveTagIndex] = React.useState<number | null>(null);\n\n  const {\n    control,\n    handleSubmit,\n    setValue,\n    formState: { errors, isSubmitting }\n  } = useForm<FormValues>({\n    resolver: zodResolver(FormSchema),\n    defaultValues: {\n      topics: defaultTags,\n    },\n  });\n\n  const { field } = useController({\n    name: \"topics\",\n    control,\n  });\n\n  function onSubmit(data: FormValues) {\n    toast('You submitted the following values:', {\n      description: (\n        <pre className=\"mt-2 w-[340px] rounded-md bg-slate-950 p-4\">\n          <code className=\"text-white\">{JSON.stringify(data, null, 2)}</code>\n        </pre>\n      ),\n    });\n  }\n\n  function onError(errors: any) {\n    toast.error('Form contains errors', {\n      description: errors.topics?.message || 'Please select at least one topic',\n    });\n  }\n\n  // Function to clear all tags\n  const clearAllTags = () => {\n    setTags([]);\n    setValue('topics', []);\n  };\n\n  const handleTagsChange = (newTags: React.SetStateAction<Tag[]>) => {\n    const updatedTags = typeof newTags === 'function'\n      ? newTags(tags)\n      : newTags.map(tag => {\n        if (!tag.id) {\n          return { ...tag, id: uuid() };\n        }\n        return tag;\n      });\n\n    setTags(updatedTags);\n    setValue('topics', updatedTags);\n  };\n\n  return (\n    <section className=\"z-10 w-full flex flex-col items-center text-center gap-5\">\n      <div className=\"w-full min-w-[350px]\">\n        <form onSubmit={handleSubmit(onSubmit, onError)} className=\"w-full max-w-md\">\n          <div className=\"*:not-first:mt-2 flex items-start flex-col\">\n            <Label htmlFor={id}>Topics</Label>\n            <TagInput\n              {...field}\n              placeholder=\"Enter a topic\"\n              tags={tags}\n              className=\"max-w-full\"\n              setTags={handleTagsChange}\n              createTagOnBlur={true}\n              activeTagIndex={activeTagIndex}\n              setActiveTagIndex={setActiveTagIndex}\n            />\n\n            {errors.topics && (\n              <p className=\"text-destructive text-sm mt-1\">\n                {errors.topics.message}\n              </p>\n            )}\n          </div>\n\n          <div className=\"flex justify-end gap-2 mt-4\">\n            <Button\n              type=\"submit\"\n              disabled={isSubmitting}\n            >\n              {isSubmitting ? 'Submitting...' : 'Submit'}\n            </Button>\n            <Button\n              type=\"button\"\n              variant={'destructive'}\n              onClick={clearAllTags}\n            >\n              Clear\n            </Button>\n          </div>\n        </form>\n      </div>\n    </section>\n  );\n}",
+      "type": "registry:component"
+    }
+  ],
+  "meta": {
+    "tags": [
+      "input",
+      "label",
+      "tag",
+      "tagmento"
+    ]
+  }
+}

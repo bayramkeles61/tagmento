@@ -1,0 +1,6 @@
+# Tagmento issue configuration
+blank_issues_enabled: false
+contact_links:
+  - name: General questions
+    url: https://github.com/bayramkeles61/tagmento/discussions?category=general
+    about: Please ask and answer questions here

@@ -1,0 +1,31 @@
+name: CC
+
+on:
+  pull_request:
+    branches: ["*"]
+
+jobs:
+  typecheck-lint:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node 18
+        uses: actions/setup-node@v3
+        with:
+          node-version: 18
+          cache: "npm"
+
+      - name: Install deps
+        run: npm ci
+
+      - name: Run typecheck in website workspace
+        run: npm run typecheck --workspace=website
+
+      - name: Check prettier format
+        run: npm run prettier-check
+
+      - name: Build packages
+        run: npm run build --workspaces

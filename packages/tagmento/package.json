@@ -1,0 +1,76 @@
+{
+  "name": "tagmento",
+  "version": "1.0.0",
+  "description": "A highly customizable, accessible tag input component built with shadcn/ui",
+  "private": false,
+  "publishConfig": {
+    "access": "public"
+  },
+  "exports": {
+    "types": "./dist/index.d.ts",
+    "import": "./dist/index.mjs",
+    "require": "./dist/index.js"
+  },
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "prepare": "npm run build",
+    "typecheck": "tsc --noEmit",
+    "build": "npm-run-all build:*",
+    "build:tsup": "tsup --dts --minify",
+    "clean": "rimraf dist",
+    "dev": "tsup --watch --dts",
+    "format": "prettier --write .",
+    "prettier-check": "prettier --check \"**/*.{ts,tsx,md}\"",
+    "release": "npm run build && changeset publish"
+  },
+  "keywords": [
+    "shadcn",
+    "react",
+    "tag input",
+    "shadcn/ui",
+    "tag input component",
+    "input",
+    "react tag input",
+    "tagmento",
+    "react 19"
+  ],
+  "license": "MIT",
+  "homepage": "https://tagmento.com",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bayramkeles61/tagmento",
+    "directory": "packages/tagmento"
+  },
+  "bugs": {
+    "url": "https://github.com/bayramkeles61/tagmento/issues"
+  },
+  "devDependencies": {
+    "@types/node": "^22.13.10",
+    "@types/react": "^19.0.10",
+    "@types/react-dom": "^19.0.4",
+    "npm-run-all": "^4.1.5",
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0",
+    "tsup": "^8.4.0",
+    "typescript": "^5.8.2"
+  },
+  "peerDependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "dependencies": {
+    "@radix-ui/react-dialog": "^1.1.6",
+    "@radix-ui/react-popover": "^1.1.6",
+    "@radix-ui/react-slot": "^1.1.2",
+    "class-variance-authority": "latest",
+    "clsx": "latest",
+    "cmdk": "^1.0.4",
+    "react-easy-sort": "^1.6.0",
+    "tailwind-merge": "latest"
+  }
+}
