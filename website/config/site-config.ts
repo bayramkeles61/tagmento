@@ -5,7 +5,7 @@ export const siteConfig = {
   ogImage: 'https://tagmento.com/og.jpg',
   url: 'https://tagmento.com',
   links: {
-    twitter: 'https://twitter.com/bayramkeles61',
+    site: 'https://bayramkeles.com',
     github: 'https://github.com/bayramkeles61/tagmento',
   },
 };
