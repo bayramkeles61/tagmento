@@ -1,5 +1,11 @@
 # tagmento
 
+## 1.1.0
+
+### Minor Changes
+
+- 8bf81df: Update core dependencies
+
 ## 1.0.0
 
 ### Major Changes
