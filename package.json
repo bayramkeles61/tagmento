@@ -36,16 +36,16 @@
   "lint-staged": {
     "packages/**/*.{ts,tsx}": [
       "prettier --write",
-      "cd packages && tsc --noEmit"
+      "bash -c 'cd packages && npx --no-install tsc --noEmit'"
     ],
     "website/**/*.{ts,tsx}": [
       "prettier --write",
-      "cd website && tsc --noEmit"
+      "bash -c 'cd website && npx --no-install tsc --noEmit'"
     ],
     "*.{md,mdx}": [
       "prettier --write"
     ],
-    "*.{js,jsx,json}": [
+    "*.{js,jsx}": [
       "prettier --write"
     ]
   },
