@@ -27,29 +27,26 @@ type Props = {
 };
 
 export default function CodeBlock({ code, lang, initial, preHighlighted }: Props) {
-  const [content, setContent] = useState<JSX.Element | null>(preHighlighted || initial || null);
+  const [highlighted, setHighlighted] = useState<JSX.Element | null>(null);
 
   useLayoutEffect(() => {
-    // If we have pre-highlighted content, use that
-    if (preHighlighted) {
-      setContent(preHighlighted);
-      return;
-    }
+    if (preHighlighted || !code) return;
 
     let isMounted = true;
-
-    if (code) {
-      highlight(code, lang).then((result) => {
-        if (isMounted) setContent(result);
-      });
-    } else {
-      setContent(<pre className="rounded-md bg-zinc-950 p-4">No code available</pre>);
-    }
+    highlight(code, lang).then((result) => {
+      if (isMounted) setHighlighted(result);
+    });
 
     return () => {
       isMounted = false;
     };
   }, [code, lang, preHighlighted]);
+
+  const content =
+    preHighlighted ??
+    highlighted ??
+    initial ??
+    (code ? null : <pre className="rounded-md bg-zinc-950 p-4">No code available</pre>);
 
   return content ? (
     <div className="[&_code]:font-mono [&_code]:text-[13px] [&_pre]:max-h-[450px] [&_pre]:overflow-auto [&_pre]:rounded-md [&_pre]:bg-zinc-950! [&_pre]:p-4 [&_pre]:leading-snug dark:[&_pre]:bg-zinc-900!">
